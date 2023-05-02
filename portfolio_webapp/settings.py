@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # Project apps
     "users",
+    "portfolio",
     # Default Django apps
     "django.contrib.admin",
     "django.contrib.auth",
