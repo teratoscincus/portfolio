@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "core/base.html" %}
 
-<head>
-  <title>Project</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-</head>
+{% block title %}{{ project.title }} | {% endblock %}
 
-<body>
-  <h1>{{ project.title }}</h1>
-  <p>{{ project.summary }}</p>
-  <p>{{ project.description }}</p>
-</body>
-
-</html>
+{% block content %}
+<h1>{{ project.title }}</h1>
+<p>{{ project.summary }}</p>
+<p>{{ project.description }}</p>
+{% endblock %}
