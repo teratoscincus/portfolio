@@ -21,5 +21,6 @@ urlpatterns = [
     # Default Django URLs
     path("admin/", admin.site.urls),
     # Project URLs
+    path("", include("core.urls")),
     path("portfolio/", include("portfolio.urls")),
 ]

@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # Project apps
+    "core",
     "users",
     "portfolio",
     # Default Django apps
