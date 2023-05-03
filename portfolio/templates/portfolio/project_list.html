@@ -3,12 +3,15 @@
 {% block title %}Portfolio | {% endblock %}
 
 {% block content %}
-<h1>Projects</h1>
 
-{% for project in project_list %}
-<h2>
-  <a href="{% url 'portfolio:single_project' pk=project.pk %}">{{ project.title }}</a>
-</h2>
-<p>{{ project.summary }}</p>
-{% endfor %}
+<div class="main-menu">
+  {% for project in project_list %}
+  <div>
+    <h2>
+      <a class="main-menu-link" href="{% url 'portfolio:single_project' slug=project.slug %}">{{ project.title }}</a>
+    </h2>
+    <p class="main-menu-link-description">{{ project.summary }}</p>
+  </div>
+  {% endfor %}
+</div>
 {% endblock %}
