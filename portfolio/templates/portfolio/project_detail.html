@@ -3,6 +3,7 @@
 {% block title %}{{ project.title }} | {% endblock %}
 
 {% block content %}
-<p>{{ project.summary }}</p>
-<p>{{ project.description }}</p>
+<h1 class="title">{{ project.title }}</h1>
+<p class="summary">{{ project.summary }}</p>
+<p class="description">{{ project.description }}</p>
 {% endblock %}

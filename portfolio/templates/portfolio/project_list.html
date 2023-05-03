@@ -5,13 +5,17 @@
 {% block content %}
 
 <div class="main-menu">
+  <ul>
   {% for project in project_list %}
-  <div>
+  <li class="nav-item">
     <h2>
-      <a class="main-menu-link" href="{% url 'portfolio:single_project' slug=project.slug %}">{{ project.title }}</a>
+      <a class="nav-link" href="{% url 'portfolio:single_project' slug=project.slug %}">
+        {{ project.title }}<span class="path">/</span>
+      </a>
     </h2>
-    <p class="main-menu-link-description">{{ project.summary }}</p>
-  </div>
+    <p class="summary">{{ project.summary }}</p>
+  </li>
   {% endfor %}
+  </ul>
 </div>
 {% endblock %}

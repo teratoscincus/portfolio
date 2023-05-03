@@ -1,7 +1,13 @@
 <ul>
-  {% url 'core:index' as index_url %}
-  {% if request.path != index_url %}
-  <li><a href="{{ index_url }}">Home</a></li>
+  {% url 'core:index' as index_url %} {% if request.path != index_url %}
+  <li class="nav-item">
+    <a class="nav-link" href="{{ index_url }}">Home<span class="path">/</span></a>
+  </li>
   {% endif %}
-  <li><a href="{% url 'portfolio:projects' %}">Portfolio</a></li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'portfolio:projects' %}">Portfolio<span class="path">/</span></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">About<span class="path">/</span></a>
+  </li>
 </ul>
