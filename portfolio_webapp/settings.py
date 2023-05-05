@@ -64,10 +64,14 @@ TEMPLATES = [
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
+                # Default Django context processors
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                # Project context processors
+                "core.context_processors.domain_name",
+                "core.context_processors.site_owner",
             ],
         },
     },

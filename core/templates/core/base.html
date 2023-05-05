@@ -5,7 +5,7 @@
 
 <head>
   <title>
-    {% filter suffix:" | " %}{% block title %}{% endblock %}{% endfilter %}Teratoscincus
+    {% filter suffix:" | " %}{% block title %}{% endblock %}{% endfilter %}{{ domain_name }}
   </title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +20,8 @@
 
   <main>
     <h1 class="breadcrumb">
-      <span class="user-host">user@teratoscincus</span>:<span class="path">~{{ request.path }}</span>
+      <span class="user-host">{{ site_owner }}@{{ domain_name|lower }}</span>:<span
+        class="path">~{{request.path}}</span>
     </h1>
     {% block content %}{% endblock %}
   </main>
