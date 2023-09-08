@@ -4,5 +4,9 @@
 
 {% block content %}
 <h1 class="title">About</h1>
-<p class="description">{{ about }}</p>
+{% if about %}
+  <p class="description">{{ about }}</p>
+{% else %}
+  <p class="description">Coming soon</p>
+{% endif %}
 {% endblock %}
