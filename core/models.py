@@ -7,6 +7,9 @@ class About(models.Model):
     featured = models.BooleanField(default=True)
     text = models.TextField()
 
+    class Meta:
+        verbose_name_plural = "About"
+
     def save(self, *args, **kwargs):
         """Ensure only one instance is featured and that one always is featured."""
         if self.featured:
@@ -18,3 +21,6 @@ class About(models.Model):
                 self.featured = True
 
         return super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"About-section (v.{self.pk})"
