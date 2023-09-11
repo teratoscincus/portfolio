@@ -19,11 +19,9 @@ RUN addgroup --system app && adduser --system --group app
 
 ENV HOME=/home/app
 ENV APP_HOME=${HOME}/web
-RUN mkdir -p ${APP_HOME}
+RUN mkdir -p ${APP_HOME}/staticfiles
 WORKDIR ${APP_HOME}
 
-# RUN apt-get update && \
-#     apt-get install -y --no-install-recommends netcat
 COPY --from=builder /usr/src/app/wheels /wheels
 COPY --from=builder /usr/src/app/requirements.txt .
 RUN pip install --upgrade pip && \
