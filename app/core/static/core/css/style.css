@@ -90,6 +90,11 @@ a::selection {
   align-items: center;
 }
 
+.home-link:hover,
+.home-link:focus {
+  color: inherit;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
