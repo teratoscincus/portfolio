@@ -5,5 +5,5 @@
 {% block content %}
 <h1 class="title">{{ project.title }}</h1>
 <p class="summary">{{ project.summary }}</p>
-<p class="description">{{ project.description }}</p>
+<div class="description">{{ project.description|linebreaks }}</div>
 {% endblock %}
