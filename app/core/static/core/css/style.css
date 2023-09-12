@@ -1,5 +1,7 @@
 /* GENERAL */
 
+@import url("https://fonts.googleapis.com/css2?family=Cairo+Play:wght@700&family=JetBrains+Mono:wght@400;700&display=swap");
+
 :root {
   --black: #282828;
   --black-bright: #928374;
@@ -49,7 +51,7 @@
 }
 
 main {
-  font-family: monospace;
+  font-family: "JetBrains Mono", monospace;
   padding: 0 2em;
 }
 
@@ -83,6 +85,7 @@ a::selection {
 }
 
 .home-link {
+  font-family: "Cairo Play", sans-serif;
   display: flex;
   align-items: center;
 }
@@ -98,6 +101,7 @@ a::selection {
 }
 
 .nav-link {
+  font-family: "JetBrains Mono", monospace;
   color: var(--dim-bright);
 }
 
