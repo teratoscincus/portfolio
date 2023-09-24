@@ -22,12 +22,24 @@ services:
     build: ./nginx
     volumes:
       - static_volume:/home/app/web/staticfiles
+      - /etc/letsencrypt:/etc/letsencrypt
+      - /var/lib/letsencrypt:/var/lib/letsencrypt
+      - /var/www/html:/var/www/html
     ports:
-      - ${PORT}:80
+      - 80:80
+      - 443:443
     env_file:
       - ./.env
     depends_on:
       - web
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - "/etc/letsencrypt:/etc/letsencrypt"
+      - "/var/lib/letsencrypt:/var/lib/letsencrypt"
+    env_file:
+      - ./.env
+    command: certbot certonly --standalone -d ${DOMAIN}
 
 volumes:
   postgres_data:
