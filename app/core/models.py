@@ -24,3 +24,27 @@ class About(models.Model):
 
     def __str__(self):
         return f"About-section (v.{self.pk})"
+
+
+class SocialMediaLink(models.Model):
+    """Link to a social media."""
+
+    class SocialMediaPlatform(models.TextChoices):
+        GITHUB = "gh", "GitHub"
+        LINKEDIN = "in", "LinkedIn"
+        FACEBOOK = "fb", "Facebook"
+        INSTAGRAM = "ig", "Instagram"
+        YOUTUBE = "yt", "YouTube"
+
+    social_media = models.CharField(
+        max_length=2,
+        unique=True,
+        choices=SocialMediaPlatform.choices,
+    )
+    url = models.URLField(
+        unique=True,
+        help_text="URL to social media page.",
+    )
+
+    def __str__(self):
+        return self.social_media

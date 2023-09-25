@@ -312,12 +312,40 @@ a::selection {
 /* FOOTER */
 
 .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-family: "JetBrains Mono", monospace;
   font-size: 1rem;
   margin-top: auto;
   border-top: 1px solid var(--dim);
 }
 
-.footer span {
+.footer p,
+.footer a,
+.footer i {
   color: var(--dim-bright);
+}
+
+.footer i {
+  transition: ease 0.35s;
+}
+
+.footer i:hover,
+.footer i:focus {
+  color: var(--primary);
+}
+
+.social-media-links {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.social-media-link {
+  font-size: 1.25rem;
+}
+
+.footer .hidden {
+  color: var(--background);
 }

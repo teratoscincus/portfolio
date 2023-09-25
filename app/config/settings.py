@@ -76,6 +76,7 @@ TEMPLATES = [
                 # Project context processors
                 "core.context_processors.domain_name",
                 "core.context_processors.site_owner",
+                "core.context_processors.social_media_links",
             ],
         },
     },
