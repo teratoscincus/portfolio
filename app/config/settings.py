@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     "core",
     "users",
     "portfolio",
+    # Third-party apps
+    "fontawesomefree",
 ]
 
 MIDDLEWARE = [

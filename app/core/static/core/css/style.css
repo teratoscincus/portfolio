@@ -154,6 +154,7 @@ a::selection {
     top: 5rem;
     flex-direction: column;
     width: 100%;
+    height: 100%;
     font-size: 1.5rem;
     padding-left: 2ch;
     padding-bottom: 100%;
@@ -246,7 +247,7 @@ a::selection {
   font-weight: bold;
 }
 
-.main-menu .nav-link {
+.title a {
   transition: ease 0.35s;
 }
 
@@ -276,4 +277,15 @@ a::selection {
 .description,
 .project-links {
   margin-top: 1.5rem;
+}
+
+.project-link i {
+  transition: ease 0.45s;
+  color: var(--blue-bright);
+}
+
+.project-link i:hover,
+.project-link i:focus {
+  color: var(--primary);
+  transform: rotate(360deg);
 }
