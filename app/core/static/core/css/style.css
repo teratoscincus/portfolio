@@ -62,6 +62,12 @@ a {
   color: var(--background);
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 main {
   font-family: "JetBrains Mono", monospace;
   padding: 0 2em;
@@ -82,13 +88,26 @@ a::selection {
   flex-direction: row;
 }
 
+.navbar,
+.footer {
+  padding: 0.5em 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.navbar {
+  margin-bottom: 0.5em;
+}
+
+.footer {
+  margin-top: 0.5em;
+}
+
 /* NAVBAR */
 
 .navbar {
   display: flex;
   justify-content: space-between;
-  margin: 0 1em 0.5em;
-  padding: 0.5em 1em;
   border-bottom: 1px solid var(--dim);
 }
 
@@ -288,4 +307,17 @@ a::selection {
 .project-link i:focus {
   color: var(--primary);
   transform: rotate(360deg);
+}
+
+/* FOOTER */
+
+.footer {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1rem;
+  margin-top: auto;
+  border-top: 1px solid var(--dim);
+}
+
+.footer span {
+  color: var(--dim-bright);
 }
