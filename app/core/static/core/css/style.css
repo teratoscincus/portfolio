@@ -71,6 +71,7 @@ body {
 main {
   font-family: "JetBrains Mono", monospace;
   padding: 0 2em;
+  margin-bottom: 1rem;
 }
 
 a:hover,
