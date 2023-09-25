@@ -1,5 +1,3 @@
-from enum import unique
-
 from django.db import models
 from django.utils.text import slugify
 
@@ -9,6 +7,13 @@ class Project(models.Model):
         max_length=50,
         unique=True,
         help_text="The title of the project.",
+    )
+    repo_url = models.URLField(
+        help_text="URL to remote git repo.",
+    )
+    live_url = models.URLField(
+        blank=True,
+        help_text="URL to live project.",
     )
     summary = models.TextField(
         help_text="Summarize the project.",

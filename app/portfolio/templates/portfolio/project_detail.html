@@ -5,5 +5,13 @@
 {% block content %}
 <h1 class="title">{{ project.title }}</h1>
 <p class="summary">{{ project.summary }}</p>
+<div class="project-links">
+  {% if project.repo_url != "" %}
+    <a class="project-link" href="{{ project.repo_url }}">Github repo</a>
+  {% endif %}
+  {% if project.live_url != "" %}
+    <a class="project-link" href="{{ project.live_url }}">Live website</a>
+  {% endif %}
+</div>
 <div class="description">{{ project.description|linebreaks }}</div>
 {% endblock %}

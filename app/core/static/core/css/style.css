@@ -257,7 +257,8 @@ a::selection {
 
 .main-menu .summary,
 .summary,
-.description {
+.description,
+.project-link {
   font-size: 1.5rem;
   font-weight: normal;
   padding-left: 2ch;
@@ -272,6 +273,7 @@ a::selection {
   color: var(--background);
 }
 
-.description {
+.description,
+.project-links {
   margin-top: 1.5rem;
 }
