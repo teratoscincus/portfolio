@@ -137,6 +137,21 @@ a::selection {
   display: none;
 }
 
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: ease 0.35s;
+  transition: ease 0.35s;
+  background-color: var(--foreground);
+}
+
+.hamburger:hover .bar,
+.hamburger:focus .bar {
+  background-color: var(--green-bright);
+}
+
 @media only screen and (max-width: 768px) {
   .navbar .nav-menu {
     position: fixed;
@@ -174,6 +189,23 @@ a::selection {
   .hamburger {
     display: block;
     cursor: pointer;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .hamburger.active:hover .bar,
+  .hamburger.active:focus .bar {
+    background-color: var(--red);
   }
 }
 
