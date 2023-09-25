@@ -228,6 +228,7 @@ a::selection {
 
 .path {
   color: var(--blue-bright);
+  word-wrap: break-word;
 }
 
 .path::selection {
