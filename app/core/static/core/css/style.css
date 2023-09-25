@@ -349,3 +349,9 @@ a::selection {
 .footer .hidden {
   color: var(--background);
 }
+
+@media only screen and (max-width: 768px) {
+  .footer .hidden {
+    display: none;
+  }
+}
