@@ -1,6 +1,22 @@
-/* GENERAL */
-
 @import url("https://fonts.googleapis.com/css2?family=Cairo+Play:wght@700&family=JetBrains+Mono:wght@400;700&display=swap");
+
+/* RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* GENERAL */
 
 :root {
   --black: #282828;
@@ -34,10 +50,6 @@
 * {
   background: var(--background);
   color: var(--foreground);
-  text-decoration: none;
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 *:focus-visible {
