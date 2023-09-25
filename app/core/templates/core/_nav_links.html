@@ -1,4 +1,4 @@
-<ul>
+<ul class="nav-menu">
   {% url 'core:index' as index_url %} {% if request.path != index_url %}
   <li class="nav-item">
     <a class="nav-link" href="{{ index_url }}">Home<span class="path">/</span></a>

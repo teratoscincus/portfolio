@@ -67,10 +67,6 @@ main {
   padding: 0 2em;
 }
 
-a {
-  transition: ease 0.35s;
-}
-
 a:hover,
 a:focus {
   color: var(--primary);
@@ -107,18 +103,18 @@ a::selection {
   color: inherit;
 }
 
-.nav-links {
+.navbar nav {
   display: flex;
   align-items: center;
   gap: 1em;
 }
 
-.nav-links ul {
+.navbar .nav-menu {
   display: flex;
   flex-direction: row;
 }
 
-.nav-links .path {
+.navbar .path {
   display: none;
 }
 
@@ -129,11 +125,56 @@ a::selection {
 .nav-link {
   font-family: "JetBrains Mono", monospace;
   color: var(--dim-bright);
+  transition: ease 0.35s;
 }
 
 .nav-link:hover,
 .nav-link:focus {
   color: var(--primary);
+}
+
+.hamburger {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 5rem;
+    flex-direction: column;
+    width: 100%;
+    font-size: 1.5rem;
+    padding-left: 3ch;
+    padding-bottom: 100%;
+    transition: ease 0.35s;
+  }
+
+  .navbar .nav-menu.active {
+    left: 0;
+  }
+
+  .navbar .nav-item {
+    margin-top: 1.5rem;
+  }
+
+  .navbar .nav-link {
+    color: var(--foreground);
+  }
+
+  .navbar .nav-link:hover,
+  .navbar .nav-link:focus {
+    color: var(--primary);
+  }
+
+  .navbar .path {
+    display: inline;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
 }
 
 /* BREADCRUMB */
