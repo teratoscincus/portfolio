@@ -155,7 +155,7 @@ a::selection {
     flex-direction: column;
     width: 100%;
     font-size: 1.5rem;
-    padding-left: 3ch;
+    padding-left: 2ch;
     padding-bottom: 100%;
     transition: ease 0.35s;
   }
@@ -170,6 +170,8 @@ a::selection {
 
   .navbar .nav-link {
     color: var(--foreground);
+    font-size: 1.5rem;
+    font-weight: bold;
   }
 
   .navbar .nav-link:hover,
