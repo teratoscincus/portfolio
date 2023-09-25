@@ -6,6 +6,8 @@
 <h1 class="title">
   {% if project.live_url != "" %}
     <a href="{{ project.live_url }}">{{ project.title }}</a>
+  {% else %}
+    {{ project.title }}
   {% endif %}
 </h1>
 <p class="summary">{{ project.summary }}</p>
