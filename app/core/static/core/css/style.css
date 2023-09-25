@@ -101,8 +101,17 @@ a::selection {
   gap: 1em;
 }
 
+.nav-links ul {
+  display: flex;
+  flex-direction: row;
+}
+
 .nav-links .path {
   display: none;
+}
+
+.nav-item {
+  margin-left: 1em;
 }
 
 .nav-link {
