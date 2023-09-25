@@ -14,9 +14,7 @@
 </head>
 
 <body>
-  <header class="navbar">
-    {% include "core/_header.html" %}
-  </header>
+  {% include "core/_header.html" %}
 
   <main>
     <h1 class="breadcrumb">
@@ -26,9 +24,7 @@
     {% block content %}{% endblock %}
   </main>
 
-  <footer>
-    {% include "core/_footer.html" %}
-  </footer>
+  {% include "core/_footer.html" %}
 </body>
 
 </html>
