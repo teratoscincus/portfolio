@@ -100,6 +100,16 @@ a::selection {
   margin-bottom: 0.5em;
 }
 
+.main-content {
+  margin-left: 1em;
+}
+
+.social-media-links {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
 .footer {
   margin-top: 0.5em;
 }
@@ -136,10 +146,6 @@ a::selection {
 
 .navbar .path {
   display: none;
-}
-
-.nav-item {
-  margin-left: 1em;
 }
 
 .nav-link {
@@ -279,6 +285,7 @@ a::selection {
 .main-menu .summary,
 .summary,
 .description,
+.main-content .social-media-link,
 .project-link {
   font-size: 1.5rem;
   font-weight: normal;
@@ -295,15 +302,19 @@ a::selection {
 }
 
 .description,
-.project-links {
+.project-links,
+.main-content .social-media-links {
   margin-top: 1.5rem;
 }
 
+.main-content .social-media-link i,
 .project-link i {
   transition: ease 0.45s;
   color: var(--blue-bright);
 }
 
+.main-content .social-media-link i:hover,
+.main-content .social-media-link i:focus,
 .project-link i:hover,
 .project-link i:focus {
   color: var(--primary);
@@ -337,13 +348,7 @@ a::selection {
   color: var(--primary);
 }
 
-.social-media-links {
-  display: flex;
-  flex-direction: row;
-  gap: 1em;
-}
-
-.social-media-link {
+.footer .social-media-link {
   font-size: 1.25rem;
 }
 

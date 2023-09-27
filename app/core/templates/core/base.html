@@ -25,7 +25,9 @@
       <span class="user-host">guest@{{ domain_name|lower }}</span>:<span
         class="path">~{{request.path}}</span>
     </h1>
-    {% block content %}{% endblock %}
+    <section class="main-content">
+      {% block content %}{% endblock %}
+    </section>
   </main>
 
   {% include "core/_footer.html" %}
