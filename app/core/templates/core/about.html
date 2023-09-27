@@ -4,6 +4,7 @@
 
 {% block content %}
 <h1 class="title">About</h1>
+{% include "core/_social_media_links.html" %}
 {% if about %}
   <div class="description">{{ about|linebreaks }}</div>
 {% else %}
