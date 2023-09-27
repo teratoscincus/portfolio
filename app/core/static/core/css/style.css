@@ -142,6 +142,7 @@ a::selection {
 .navbar .nav-menu {
   display: flex;
   flex-direction: row;
+  gap: 1rem;
 }
 
 .navbar .path {
