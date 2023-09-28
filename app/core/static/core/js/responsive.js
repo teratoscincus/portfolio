@@ -28,5 +28,5 @@ async function toggleNavMenu() {
         mainContent.classList.toggle("fade-visibility");
         footer.classList.toggle("fade-visibility");
     }
-    navbar.classList.toggle("sticky");
+    navbar.classList.toggle("fixed");
 }
