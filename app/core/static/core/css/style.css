@@ -188,6 +188,10 @@ a::selection {
     transition: ease 0.35s;
   }
 
+  .hidden {
+    display: none !important;
+  }
+
   .navbar .nav-menu.active {
     left: 0;
   }
