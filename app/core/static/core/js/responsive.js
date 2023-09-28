@@ -14,10 +14,12 @@ async function toggleNavMenu() {
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
 
+    navbar.classList.toggle("sticky");
+
     let sleepDurationMs = 350;
     if (!mainContent.classList.contains("hidden")) {
-        mainContent.classList.toggle("fade-out");
-        footer.classList.toggle("fade-out");
+        mainContent.classList.toggle("fade-visibility");
+        footer.classList.toggle("fade-visibility");
         await sleep(sleepDurationMs);
         mainContent.classList.toggle("hidden");
         footer.classList.toggle("hidden");
@@ -25,7 +27,7 @@ async function toggleNavMenu() {
         mainContent.classList.toggle("hidden");
         footer.classList.toggle("hidden");
         await sleep(sleepDurationMs);
-        mainContent.classList.toggle("fade-out");
-        footer.classList.toggle("fade-out");
+        mainContent.classList.toggle("fade-visibility");
+        footer.classList.toggle("fade-visibility");
     }
 }
