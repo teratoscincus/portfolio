@@ -256,6 +256,10 @@ a::selection {
   .hamburger.active:focus .bar {
     background-color: var(--red);
   }
+
+  .main-content .social-media-links {
+    gap: 0.25em;
+  }
 }
 
 /* BREADCRUMB */
