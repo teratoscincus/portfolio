@@ -14,8 +14,6 @@ async function toggleNavMenu() {
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
 
-    navbar.classList.toggle("sticky");
-
     let sleepDurationMs = 350;
     if (!mainContent.classList.contains("hidden")) {
         mainContent.classList.toggle("fade-visibility");
@@ -30,4 +28,5 @@ async function toggleNavMenu() {
         mainContent.classList.toggle("fade-visibility");
         footer.classList.toggle("fade-visibility");
     }
+    navbar.classList.toggle("sticky");
 }

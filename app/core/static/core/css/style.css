@@ -142,7 +142,7 @@ a::selection {
 .navbar .nav-menu {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 1em;
 }
 
 .navbar .path {
@@ -180,6 +180,7 @@ a::selection {
     left: -100%;
     top: 5rem;
     flex-direction: column;
+    gap: 0;
     width: 100%;
     height: 100%;
     font-size: 1.5rem;
