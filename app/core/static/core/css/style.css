@@ -188,6 +188,20 @@ a::selection {
     transition: ease 0.35s;
   }
 
+  main,
+  .footer {
+    visibility: visible;
+    opacity: 1;
+    transition:
+      visibility 0s,
+      opacity 0.35s linear;
+  }
+
+  .fade-visibility {
+    visibility: hidden;
+    opacity: 0;
+  }
+
   .hidden {
     display: none !important;
   }
