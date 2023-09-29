@@ -11,11 +11,15 @@
   {% endif %}
 </h1>
 <p class="summary">{{ project.summary }}</p>
-<div class="project-links">
+<ul class="project-links">
+  <li class="project-links-item">
     <a class="project-link" href="{{ project.repo_url }}"><i class="fa-brands fa-github"></i></a>
+  </li>
   {% if project.live_url != "" %}
-    <a class="project-link" href="{{ project.live_url }}"><i class="fa-solid fa-globe"></i></a>
+    <li class="project-links-item">
+      <a class="project-link" href="{{ project.live_url }}"><i class="fa-solid fa-globe"></i></a>
+    </li>
   {% endif %}
-</div>
+</ul>
 <div class="description">{{ project.description|linebreaks }}</div>
 {% endblock %}
