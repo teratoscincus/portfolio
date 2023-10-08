@@ -161,6 +161,15 @@ a::selection {
   color: var(--primary);
 }
 
+.nav-link.current {
+  color: var(--foreground);
+}
+
+.nav-link.current:hover,
+.nav-link.current:focus {
+  color: var(--primary);
+}
+
 .hamburger {
   display: none;
 }
