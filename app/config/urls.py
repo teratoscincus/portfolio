@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from core.views import Status404View, Status500View
+
 urlpatterns = [
     # Default Django URLs
     path("admin/", admin.site.urls),
@@ -24,3 +26,5 @@ urlpatterns = [
     path("", include("core.urls")),
     path("portfolio/", include("portfolio.urls")),
 ]
+handler404 = Status404View.as_view()
+handler500 = Status500View.as_view()

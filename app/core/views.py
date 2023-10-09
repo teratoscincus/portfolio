@@ -1,5 +1,5 @@
-from django.views.generic import TemplateView
 from django.core.exceptions import ObjectDoesNotExist
+from django.views.generic import TemplateView
 
 from .models import About
 
@@ -17,3 +17,11 @@ class AboutView(TemplateView):
         except ObjectDoesNotExist:
             about = None
         return {"about": about}
+
+
+class Status404View(TemplateView):
+    template_name = "core/status/404.html"
+
+
+class Status500View(TemplateView):
+    template_name = "core/status/500.html"
