@@ -25,6 +25,7 @@ urlpatterns = [
     # Project URLs
     path("", include("core.urls")),
     path("portfolio/", include("portfolio.urls")),
+    path("blog/", include("blog.urls")),
 ]
 handler404 = Status404View.as_view()
 handler500 = Status500View.as_view()

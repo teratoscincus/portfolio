@@ -1,0 +1,26 @@
+{% extends "core/base.html" %}
+
+{% block title %}Portfolio{% endblock %}
+
+{% block content %}
+
+<div class="main-menu">
+  {% if blog_post_list %}
+    <ul>
+    {% for blog_post in blog_post_list %}
+    <li class="nav-item">
+      <h2>
+        <a class="nav-link" href="{% url 'blog:single_blog_post' slug=blog_post.slug %}">
+          {{ blog_post.title }}<span class="path">/</span>
+        </a>
+      </h2>
+      <p class="intro">{{ blog_post.intro }}</p>
+    </li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <h1 class="title">Blog</h1>
+    <p class="description">Coming soon</p>
+  {% endif %}
+</div>
+{% endblock %}
