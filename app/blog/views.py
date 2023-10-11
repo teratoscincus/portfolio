@@ -1,6 +1,6 @@
 from django.views.generic import DetailView, ListView
 
-from .models import BlogPost, BlogPostParagraph
+from .models import BlogPost, BlogPostParagraph, BlogPostSnippet
 
 
 class BlogPostListView(ListView):
@@ -21,4 +21,7 @@ class BlogPostDetailView(DetailView):
         blog_post.paragraphs = BlogPostParagraph.objects.filter(
             blog_post=self.get_object()
         )
+        for paragraph in blog_post.paragraphs:
+            paragraph.snippets = BlogPostSnippet.objects.filter(paragraph=paragraph)
+
         return {self.context_object_name: blog_post}

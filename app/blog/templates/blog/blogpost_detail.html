@@ -7,6 +7,17 @@
 <p class="summary">{{ blog_post.summary }}</p>
 <div class="intro">{{ blog_post.intro|linebreaks }}</div>
 {% for paragraph in blog_post.paragraphs %}
-  <p class="paragraph">{{ paragraph.text }}</p>
+  <section class="paragraph-section">
+    <p class="paragraph">{{ paragraph.text }}</p>
+    {% for snippet in paragraph.snippets %}
+      <section class="snippet-section">
+        {% if snippet.intended_location %}
+          <h1 class="snippet-intendet-location">{{ snippet.intended_location }}</h1>
+        {% endif %}
+        <code class="snippet">{{ snippet.snippet }}</code>
+        <p class="snippet-description">{{ snippet.description }}</p>
+      </section>
+    {% endfor %}
+  </section>
 {% endfor %}
 {% endblock %}

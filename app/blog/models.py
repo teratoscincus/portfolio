@@ -31,3 +31,21 @@ class BlogPostParagraph(models.Model):
 
     def __str__(self):
         return f"{self.blog_post.title} (p.{self.pk})"
+
+
+class BlogPostSnippet(models.Model):
+    """A code or command snippet belonging to a blog post paragraph."""
+
+    paragraph = models.ForeignKey(BlogPostParagraph, on_delete=models.CASCADE)
+    snippet = models.TextField(help_text="A blog post paragraph.")
+    description = models.TextField(
+        blank=True,
+        help_text="A detailed description of the project.",
+    )
+    intended_location = models.TextField(
+        blank=True,
+        help_text="The intended location to write the snippet to.",
+    )
+
+    def __str__(self):
+        return f"{self.paragraph.blog_post.title} (p.{self.paragraph.pk}, s.{self.pk})"
