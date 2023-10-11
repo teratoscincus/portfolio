@@ -1,0 +1,12 @@
+{% extends "core/base.html" %}
+
+{% block title %}{{ blog_post.title }}{% endblock %}
+
+{% block content %}
+<h1 class="title">{{ blog_post.title }}</h1>
+<p class="summary">{{ blog_post.summary }}</p>
+<div class="intro">{{ blog_post.intro|linebreaks }}</div>
+{% for paragraph in blog_post.paragraphs %}
+  <p class="paragraph">{{ paragraph.text }}</p>
+{% endfor %}
+{% endblock %}
