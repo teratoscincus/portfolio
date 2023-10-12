@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from taggit.managers import TaggableManager
 
 
 class BlogPost(models.Model):
@@ -11,6 +12,7 @@ class BlogPost(models.Model):
     intro = models.TextField(
         help_text="Introduction of the blog post.",
     )
+    tags = TaggableManager()
     date_added = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(unique=True, default="")
 

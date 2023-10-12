@@ -6,6 +6,11 @@
 <h1 class="title">{{ blog_post.title }}</h1>
 <p class="summary">{{ blog_post.summary }}</p>
 <div class="intro">{{ blog_post.intro|linebreaks }}</div>
+<section class="tags">
+  {% for tag in blog_post.tags.all %}
+    <p class="tag">{{ tag.name }}</p>
+  {% endfor %}
+</section>
 {% for paragraph in blog_post.paragraphs %}
   <section class="paragraph-section">
     <h2 class="heading">{{ paragraph.heading }}</h2>
@@ -15,7 +20,11 @@
         {% if snippet.intended_location %}
           <h1 class="snippet-intendet-location">{{ snippet.intended_location }}</h1>
         {% endif %}
-        <code class="snippet">{{ snippet.snippet }}</code>
+        {% if snippet.snippet|length > 100 %}
+          <code class="snippet scroll">{{ snippet.snippet }}</code>
+        {% else %}
+          <code class="snippet">{{ snippet.snippet }}</code>
+        {% endif %}
         <p class="snippet-description">{{ snippet.description }}</p>
       </section>
     {% endfor %}
