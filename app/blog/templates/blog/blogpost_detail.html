@@ -8,6 +8,7 @@
 <div class="intro">{{ blog_post.intro|linebreaks }}</div>
 {% for paragraph in blog_post.paragraphs %}
   <section class="paragraph-section">
+    <h2 class="heading">{{ paragraph.heading }}</h2>
     <p class="paragraph">{{ paragraph.text }}</p>
     {% for snippet in paragraph.snippets %}
       <section class="snippet-section">

@@ -27,6 +27,9 @@ class BlogPostParagraph(models.Model):
     """A paragraph of a blog post."""
 
     blog_post = models.ForeignKey(BlogPost, on_delete=models.CASCADE)
+    heading = models.CharField(
+        max_length=50, blank=True, help_text="The heading of the paragraph."
+    )
     text = models.TextField(help_text="A blog post paragraph.")
 
     def __str__(self):
