@@ -5,6 +5,11 @@ const hamburger = navbar.querySelector(".hamburger");
 const mainContent = document.querySelector("main");
 const footer = document.querySelector(".footer");
 
+function toggleMenu(menuToggle, menu) {
+    menuToggle.classList.toggle("active");
+    menu.classList.toggle("active");
+}
+
 // Drop-down navbar menu
 
 function sleep(ms) {
@@ -13,10 +18,12 @@ function sleep(ms) {
 
 hamburger.addEventListener("click", toggleNavMenu);
 
-async function toggleNavMenu() {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
+function toggleNavMenu() {
+    toggleMenu(hamburger, navMenu);
+    fadeMainContent();
+}
 
+async function fadeMainContent() {
     let sleepDurationMs = 350;
     if (!mainContent.classList.contains("hidden")) {
         mainContent.classList.toggle("fade-visibility");
