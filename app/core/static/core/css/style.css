@@ -416,6 +416,8 @@ a::selection {
 }
 
 .tag {
+  display: inline !important;
+  font-weight: normal;
   background: var(--background-dark);
   color: var(--white);
 }

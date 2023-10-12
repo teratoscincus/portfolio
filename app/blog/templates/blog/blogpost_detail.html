@@ -8,7 +8,7 @@
 <div class="intro">{{ blog_post.intro|linebreaks }}</div>
 <section class="tags">
   {% for tag in blog_post.tags.all %}
-    <p class="tag">{{ tag.name }}</p>
+    <a class="tag" href="{% url 'blog:blog_tag' tag.slug %}">{{ tag.name }}</a>
   {% endfor %}
 </section>
 {% for paragraph in blog_post.paragraphs %}

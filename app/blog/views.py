@@ -1,4 +1,6 @@
+from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView, ListView
+from taggit.models import Tag
 
 from .models import BlogPost, BlogPostParagraph, BlogPostSnippet
 
@@ -8,6 +10,23 @@ class BlogPostListView(ListView):
 
     model = BlogPost
     context_object_name = "blog_post_list"
+
+    def get_queryset(self):
+        tag_slug = self.kwargs.get("tag", "")
+        if tag_slug:
+            tag = get_object_or_404(Tag, slug=tag_slug)
+            queryset = BlogPost.objects.filter(tags__in=[tag])
+        else:
+            queryset = BlogPost.objects.all()
+        return queryset
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(object_list=object_list, **kwargs)
+
+        tag_slug = self.kwargs.get("tag", "")
+        if tag_slug:
+            context["tag"] = get_object_or_404(Tag, slug=tag_slug)
+        return context
 
 
 class BlogPostDetailView(DetailView):
