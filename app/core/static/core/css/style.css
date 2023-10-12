@@ -46,6 +46,8 @@ a {
   --primary: var(--yellow);
   --secondary: var(--green);
   --accent: var(--cyan);
+
+  --scrollbar-size: 0.5rem;
 }
 
 * {
@@ -273,8 +275,12 @@ a::selection {
     background-color: var(--red);
   }
 
-  .main-content .social-media-links {
+  .main-content .social-media-links,
+  .tags {
     flex-wrap: wrap;
+  }
+
+  .main-content .social-media-links {
     gap: 0.25em;
     margin-right: 3rem;
   }
@@ -291,6 +297,12 @@ a::selection {
 
   .description {
     margin-top: 0 !important;
+  }
+
+  code.snippet {
+    display: block !important;
+    white-space: nowrap !important;
+    overflow: auto !important;
   }
 }
 
@@ -351,15 +363,13 @@ a::selection {
 .description,
 .paragraph,
 .paragraph-section,
+.snippet-section,
 .snippet-description,
+.tags,
 .main-content .social-media-link,
 .project-link {
   font-weight: normal;
   margin-left: 2ch;
-}
-
-.snippet-section {
-  margin-left: 4ch;
 }
 
 .main-menu .summary,
@@ -368,6 +378,7 @@ a::selection {
 .intro,
 .description,
 .paragraph-section,
+.tags,
 .h1.snippet-intendet-location {
   font-size: 1.5rem;
 }
@@ -391,22 +402,61 @@ a::selection {
 .description,
 .paragraph-section,
 .snippet-section,
+.tags,
 .project-links,
 .main-content .social-media-links {
   margin-top: 1.5rem;
+}
+
+.tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.tag {
+  background: var(--background-dark);
+  color: var(--white);
+}
+
+.tag,
+code.snippet {
+  padding: 0 1ch;
+  border-radius: 3px;
 }
 
 code.snippet {
   font-family: "JetBrains Mono", monospace;
   background: var(--background-dark);
   color: var(--green);
-  padding: 0 1ch;
-  border-radius: 3px;
+}
+
+code.snippet.scroll {
+  display: block;
+  max-width: 100ch;
+  white-space: nowrap;
+  overflow: auto;
 }
 
 code.snippet::selection {
   background: var(--green-bright);
   color: var(--background-dark);
+}
+
+code.snippet.scroll::-webkit-scrollbar {
+  width: var(--scrollbar-size);
+  height: var(--scrollbar-size);
+}
+
+code.snippet.scroll::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: var(--background-dark);
+}
+
+code.snippet.scroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--dim);
 }
 
 section.snippet-section h1.snippet-intendet-location,
