@@ -258,23 +258,6 @@ a::selection {
     cursor: pointer;
   }
 
-  .hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-  .hamburger.active:hover .bar,
-  .hamburger.active:focus .bar {
-    background-color: var(--red);
-  }
-
   .main-content .social-media-links,
   .tags {
     flex-wrap: wrap;
@@ -304,6 +287,23 @@ a::selection {
     white-space: nowrap !important;
     overflow: auto !important;
   }
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.hamburger.active:hover .bar,
+.hamburger.active:focus .bar {
+  background-color: var(--red);
 }
 
 /* BREADCRUMB */
@@ -379,6 +379,7 @@ a::selection {
 .description,
 .paragraph-section,
 .tags,
+.remove-tag-filter i,
 .h1.snippet-intendet-location {
   font-size: 1.5rem;
 }
@@ -420,6 +421,15 @@ a::selection {
   font-weight: normal;
   background: var(--background-dark);
   color: var(--white);
+}
+
+.remove-tag-filter i {
+  color: var(--white);
+  transition: ease 0.45s;
+}
+
+.remove-tag-filter i:hover {
+  color: var(--red);
 }
 
 .tag,
