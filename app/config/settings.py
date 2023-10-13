@@ -45,8 +45,10 @@ INSTALLED_APPS = [
     "core",
     "users",
     "portfolio",
+    "blog",
     # Third-party apps
     "fontawesomefree",
+    "taggit",
 ]
 
 MIDDLEWARE = [
@@ -147,3 +149,8 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# Third-party app settings
+
+TAGGIT_CASE_INSENSITIVE = True

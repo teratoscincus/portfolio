@@ -3,11 +3,40 @@ const navMenu = navbar.querySelector(".nav-menu");
 const navLinks = navMenu.querySelectorAll(".nav-link");
 const hamburger = navbar.querySelector(".hamburger");
 const mainContent = document.querySelector("main");
+const mainMenu = mainContent.querySelector(".main-menu");
+const tagsMenu = document.querySelector("#tags-menu");
+const tagsMenuButton = document.querySelector("#tags-menu-button");
 const footer = document.querySelector(".footer");
 
 function toggleMenu(menuToggle, menu) {
     menuToggle.classList.toggle("active");
     menu.classList.toggle("active");
+}
+
+async function fadeElements(sleepDurationMs, ...elements) {
+    if (!elements[0].classList.contains("hidden")) {
+        elements.forEach((element) => {
+            element.classList.toggle("fade-visibility");
+        });
+        await sleep(sleepDurationMs);
+        elements.forEach((element) => {
+            element.classList.toggle("hidden");
+        });
+    } else {
+        elements.forEach((element) => {
+            element.classList.toggle("hidden");
+        });
+        await sleep(sleepDurationMs);
+        elements.forEach((element) => {
+            element.classList.toggle("fade-visibility");
+        });
+    }
+}
+
+function makeElementsRelative(...elements) {
+    elements.forEach((element) => {
+        element.classList.toggle("relative");
+    });
 }
 
 // Drop-down navbar menu
@@ -20,25 +49,8 @@ hamburger.addEventListener("click", toggleNavMenu);
 
 function toggleNavMenu() {
     toggleMenu(hamburger, navMenu);
-    fadeMainContent();
-}
-
-async function fadeMainContent() {
-    let sleepDurationMs = 350;
-    if (!mainContent.classList.contains("hidden")) {
-        mainContent.classList.toggle("fade-visibility");
-        footer.classList.toggle("fade-visibility");
-        await sleep(sleepDurationMs);
-        mainContent.classList.toggle("hidden");
-        footer.classList.toggle("hidden");
-    } else {
-        mainContent.classList.toggle("hidden");
-        footer.classList.toggle("hidden");
-        await sleep(sleepDurationMs);
-        mainContent.classList.toggle("fade-visibility");
-        footer.classList.toggle("fade-visibility");
-    }
-    navbar.classList.toggle("fixed");
+    fadeElements(350, mainContent, footer);
+    makeElementsFixed(navbar);
 }
 
 // Highlight current page in navbar
@@ -84,4 +96,16 @@ function highlightCurrentPageNavLink() {
 
 if (isVisible(navMenu)) {
     highlightCurrentPageNavLink();
+}
+
+// Blog post tags menu
+
+if (tagsMenuButton) {
+    tagsMenuButton.addEventListener("click", toggleTagsMenu);
+
+    async function toggleTagsMenu() {
+        await fadeElements(150, mainMenu, footer);
+        toggleMenu(tagsMenuButton, tagsMenu);
+        makeElementsFixed(navbar);
+    }
 }
