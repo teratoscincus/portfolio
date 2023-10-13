@@ -26,6 +26,8 @@ class BlogPostListView(ListView):
         tag_slug = self.kwargs.get("tag", "")
         if tag_slug:
             context["tag"] = get_object_or_404(Tag, slug=tag_slug)
+        context["tags"] = Tag.objects.all()
+
         return context
 
 

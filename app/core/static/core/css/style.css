@@ -118,6 +118,15 @@ a::selection {
   margin-top: 0.5em;
 }
 
+.fade-visibility {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
 /* NAVBAR */
 
 .navbar {
@@ -160,7 +169,9 @@ a::selection {
 }
 
 .nav-link:hover,
-.nav-link:focus {
+.nav-link:focus,
+#tags-menu .nav-link:hover,
+#tags-menu .nav-link:focus {
   color: var(--primary);
 }
 
@@ -219,15 +230,6 @@ a::selection {
     transition:
       visibility 0s,
       opacity 0.35s linear;
-  }
-
-  .fade-visibility {
-    visibility: hidden;
-    opacity: 0;
-  }
-
-  .hidden {
-    display: none !important;
   }
 
   .navbar .nav-menu.active {
@@ -335,6 +337,15 @@ a::selection {
 
 /* MAIN */
 
+.main-menu,
+.footer {
+  visibility: visible;
+  opacity: 1;
+  transition:
+    visibility 0.35s,
+    opacity 0.35s linear;
+}
+
 .main-menu .nav-item {
   margin-top: 1.5rem;
 }
@@ -380,6 +391,8 @@ a::selection {
 .paragraph-section,
 .tags,
 .remove-tag-filter i,
+#tags-menu-button,
+#tags-menu,
 .h1.snippet-intendet-location {
   font-size: 1.5rem;
 }
@@ -423,13 +436,55 @@ a::selection {
   color: var(--white);
 }
 
-.remove-tag-filter i {
+.remove-tag-filter i,
+#tags-menu-button {
   color: var(--white);
-  transition: ease 0.45s;
+  transition: ease 0.35s;
 }
 
-.remove-tag-filter i:hover {
+#tags-menu-button {
+  position: relative;
+  top: 0.15rem;
+}
+
+#tags-menu-button.active {
+  color: var(--green-bright);
+}
+
+.remove-tag-filter i:hover,
+.remove-tag-filter i:focus,
+#tags-menu-button.active:hover,
+#tags-menu-button.active:focus {
   color: var(--red);
+}
+
+#tags-menu-button:hover,
+#tags-menu-button:focus {
+  color: var(--green-bright);
+}
+
+#tags-nav {
+  position: relative;
+}
+
+#tags-menu {
+  position: absolute;
+  left: -100%;
+  transition: ease 0.35s;
+}
+
+#tags-menu.active {
+  position: relative;
+  left: 0;
+}
+
+#tags-menu .nav-item {
+  margin-top: 1.5rem;
+}
+
+#tags-menu .nav-link {
+  color: var(--foreground);
+  font-weight: bold;
 }
 
 .tag,
