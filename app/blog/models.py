@@ -15,6 +15,7 @@ class BlogPost(models.Model):
     tags = TaggableManager()
     date_added = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(unique=True, default="")
+    publish = models.BooleanField(default=True)
 
     def save(self, *args, **kwargs):
         """Generate a slug field and save the instance."""

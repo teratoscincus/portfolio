@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView, ListView
 from taggit.models import Tag
@@ -15,9 +16,9 @@ class BlogPostListView(ListView):
         tag_slug = self.kwargs.get("tag", "")
         if tag_slug:
             tag = get_object_or_404(Tag, slug=tag_slug)
-            queryset = BlogPost.objects.filter(tags__in=[tag])
+            queryset = BlogPost.objects.filter(publish=True, tags__in=[tag])
         else:
-            queryset = BlogPost.objects.all()
+            queryset = BlogPost.objects.filter(publish=True)
         return queryset
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -39,6 +40,9 @@ class BlogPostDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         blog_post = super().get_context_data(**kwargs)["blog_post"]
+        if not blog_post.publish:
+            raise Http404
+
         blog_post.paragraphs = BlogPostParagraph.objects.filter(
             blog_post=self.get_object()
         )
