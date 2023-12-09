@@ -9,7 +9,7 @@ A database driven portfolio web app using Django.
 ```bash
 echo 'SECRET_KEY="<a_secret>"' >> .env
 echo 'DEBUG=True' >> .env
-echo 'DOMAIN_NAME="domain-name' >> .env
+echo 'DOMAIN_NAME="domain-name"' >> .env
 echo 'SITE_OWNER="owner"' >> .env
 ```
 
