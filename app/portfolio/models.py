@@ -23,6 +23,7 @@ class Project(models.Model):
         help_text="A detailed description of the project.",
     )
     slug = models.SlugField(unique=True, default="")
+    publish = models.BooleanField(default=True)
 
     def save(self, *args, **kwargs):
         """Generate a slug field and save the instance."""
