@@ -10,7 +10,7 @@
     {{ project.title }}
   {% endif %}
 </h1>
-<p class="summary">{{ project.summary }}</p>
+<div class="summary">{{ project.summary|linebreaks }}</div>
 <ul class="project-links">
   <li class="project-links-item">
     <a class="project-link" href="{{ project.repo_url }}"><i class="fa-brands fa-github"></i></a>

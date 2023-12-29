@@ -402,7 +402,7 @@ a::selection {
   font-size: 2.25rem;
 }
 
-.main-menu .summary,
+.main-menu .summary > p,
 .main-menu .intro {
   color: var(--dim-bright);
 }
@@ -420,6 +420,18 @@ a::selection {
 .project-links,
 .main-content .social-media-links {
   margin-top: 1.5rem;
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .tags {
