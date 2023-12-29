@@ -44,6 +44,7 @@ class BlogPostSnippet(models.Model):
 
     paragraph = models.ForeignKey(BlogPostParagraph, on_delete=models.CASCADE)
     snippet = models.TextField(help_text="A blog post paragraph.")
+    side_scroll = models.BooleanField(default=False, help_text="Scrollable sideways")
     description = models.TextField(
         blank=True,
         help_text="A detailed description of the project.",

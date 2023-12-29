@@ -375,7 +375,7 @@ a::selection {
 .paragraph,
 .paragraph-section,
 .snippet-section,
-.snippet-description,
+.snippet-description + p,
 .tags,
 .main-content .social-media-link,
 .project-link {
@@ -488,11 +488,16 @@ a::selection {
 }
 
 .tag,
-code.snippet {
+pre.snippet-box {
   padding: 0 1ch;
   border-radius: 3px;
 }
 
+pre.snippet-box {
+  display: inline-block;
+}
+
+pre.snippet-box,
 code.snippet {
   font-family: "JetBrains Mono", monospace;
   background: var(--background-dark);
@@ -527,13 +532,13 @@ code.snippet.scroll::-webkit-scrollbar-thumb {
 }
 
 section.snippet-section h1.snippet-intendet-location,
-.snippet-description {
+.snippet-description + p {
   font-weight: normal;
   color: var(--white);
 }
 
 section.snippet-section h1.snippet-intendet-location::selection,
-.snippet-description::selection {
+.snippet-description + p::selection {
   background: var(--white);
 }
 

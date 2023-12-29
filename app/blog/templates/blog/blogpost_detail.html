@@ -20,12 +20,12 @@
         {% if snippet.intended_location %}
           <h1 class="snippet-intendet-location">{{ snippet.intended_location }}</h1>
         {% endif %}
-        {% if snippet.snippet|length > 100 %}
-          <code class="snippet scroll">{{ snippet.snippet }}</code>
+        {% if snippet.side_scroll %}
+          <pre class="snippet-box"><code class="snippet scroll">{{ snippet.snippet }}</code></pre>
         {% else %}
-          <code class="snippet">{{ snippet.snippet }}</code>
+          <pre class="snippet-box"><code class="snippet">{{ snippet.snippet }}</code></pre>
         {% endif %}
-        <p class="snippet-description">{{ snippet.description }}</p>
+        <p class="snippet-description">{{ snippet.description|linebreaks }}</p>
       </section>
     {% endfor %}
   </section>
