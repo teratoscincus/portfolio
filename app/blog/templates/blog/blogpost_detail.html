@@ -22,8 +22,10 @@
         {% endif %}
         {% if snippet.side_scroll %}
           <pre class="snippet-box"><code class="snippet scroll">{{ snippet.snippet }}</code></pre>
+          <button onclick="copyContent(this)">copy</button>
         {% else %}
           <pre class="snippet-box"><code class="snippet">{{ snippet.snippet }}</code></pre>
+          <button onclick="copyContent(this)">copy</button>
         {% endif %}
         <p class="snippet-description">{{ snippet.description|linebreaks }}</p>
       </section>
