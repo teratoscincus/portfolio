@@ -109,3 +109,28 @@ if (tagsMenuButton) {
         makeElementsFixed(navbar);
     }
 }
+
+// Copy snippet
+
+function findPreviousNode(element) {
+    let previousNode = element.previousSibling;
+
+    while (previousNode.tagName === undefined) {
+        previousNode = previousNode.previousSibling;
+    }
+    return previousNode;
+}
+
+function copyContent(button) {
+    const contentNode = findPreviousNode(button);
+
+    const range = document.createRange();
+    range.setStart(contentNode, 0);
+    range.setEnd(button, 0);
+    const selection = window.getSelection();
+
+    selection.removeAllRanges();
+    selection.addRange(range);
+
+    document.execCommand("copy");
+}
