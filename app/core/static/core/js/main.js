@@ -121,7 +121,7 @@ function findPreviousNode(element) {
     return previousNode;
 }
 
-function copyContent(button) {
+async function copyContent(button) {
     const contentNode = findPreviousNode(button);
 
     const range = document.createRange();
@@ -133,4 +133,7 @@ function copyContent(button) {
     selection.addRange(range);
 
     document.execCommand("copy");
+
+    await sleep(350);
+    selection.removeAllRanges();
 }
