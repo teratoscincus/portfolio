@@ -20,13 +20,15 @@
         {% if snippet.intended_location %}
           <h1 class="snippet-intendet-location">{{ snippet.intended_location }}</h1>
         {% endif %}
-        {% if snippet.side_scroll %}
-          <pre class="snippet-box"><code class="snippet scroll">{{ snippet.snippet }}</code></pre>
-          <button onclick="copyContent(this)">copy</button>
-        {% else %}
-          <pre class="snippet-box"><code class="snippet">{{ snippet.snippet }}</code></pre>
-          <button onclick="copyContent(this)">copy</button>
-        {% endif %}
+        <section>
+          {% if snippet.side_scroll %}
+            <pre class="snippet-box"><code class="snippet scroll">{{ snippet.snippet }}</code></pre>
+            <button class="copy-snippet" onclick="copyContent(this)"><i class="fa-regular fa-copy"></i></button>
+          {% else %}
+            <pre class="snippet-box"><code class="snippet">{{ snippet.snippet }}</code></pre>
+            <button class="copy-snippet" onclick="copyContent(this)"><i class="fa-regular fa-copy"></i></button>
+          {% endif %}
+        </section>
         <p class="snippet-description">{{ snippet.description|linebreaks }}</p>
       </section>
     {% endfor %}
