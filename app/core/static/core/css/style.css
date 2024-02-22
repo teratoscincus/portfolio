@@ -505,6 +505,12 @@ pre.snippet-box {
   border-radius: 3px;
 }
 
+.snippet-section section {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+}
+
 pre.snippet-box {
   display: inline-block;
 }
@@ -552,6 +558,19 @@ section.snippet-section h1.snippet-intendet-location,
 section.snippet-section h1.snippet-intendet-location::selection,
 .snippet-description + p::selection {
   background: var(--white);
+}
+
+.copy-snippet,
+.copy-snippet i {
+  color: var(--dim);
+  font-size: 1.5rem;
+  border: none;
+  transition: ease 0.35s;
+}
+
+.copy-snippet:hover,
+.copy-snippet:hover i {
+  color: var(--white);
 }
 
 .main-content .social-media-link i,
