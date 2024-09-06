@@ -1,5 +1,5 @@
 asgiref==3.7.2
-Django==5.0
+Django==5.0.8
 django-taggit==4.0.0
 fontawesomefree==6.4.2
 gunicorn==22.0.0
